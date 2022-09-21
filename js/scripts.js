@@ -34,5 +34,7 @@ async function getEmpInfo(){
   const newUrl = "https://statfin.stat.fi/PxWeb/sq/5e288b40-f8c8-4f1e-b3b0-61b86ce5c065";
   const newPromis = await fetch(newUrl);
   let EmpData = await newPromis.json();
+  
+  Object.values(empData).forEach((key) => {
 }
 
