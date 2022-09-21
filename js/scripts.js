@@ -17,21 +17,33 @@ async function getInfo() {
   Object.values(data).forEach((key) => {
     let size = Object.values(data.dataset.dimension.Alue.category.label).length;
 
-    for (let r = 1; r < size; r++) {
+    for (let r = 0; r < size; r++) {
       let tr = document.createElement("tr");
       let td1 = document.createElement("td");
       let td2 = document.createElement("td");
       let td3 = document.createElement("td");
+      let td4 = document.createElement("td");
 
-      td1.innerText = Object.values(data.dataset.dimension.Alue.category.label)[
-        r
-      ];
+      let pros =
+        (Object.values(empData.dataset.value)[r] /
+          Object.values(data.dataset.value)[r]) *
+        100;
+
+      if (pros > 45) {
+        //help from https://roytuts.com/html-table-conditional-cell-color/
+        info.rows[r].style.backgroundColor = "#abffbd";
+      } else if (pros < 25) {
+        info.rows[r].style.backgroundColor = "#ff9e9e";
+      }
+      td1.innerText = Object.values(data.dataset.dimension.Alue.category.label)[r];
       td2.innerText = Object.values(data.dataset.value)[r];
       td3.innerText = Object.values(empData.dataset.value)[r];
+      td4.innerText = pros.toFixed(2); //help from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tofixed
 
       tr.appendChild(td1);
       tr.appendChild(td2);
       tr.appendChild(td3);
+      tr.appendChild(td4);
       info.appendChild(tr);
     }
   });
