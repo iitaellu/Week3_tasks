@@ -1,5 +1,6 @@
 const info = document.getElementById("feched-data");
 getInfo();
+check();
 
 //Help from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
 //And discussion with Viia Mäntymäki
@@ -31,11 +32,14 @@ async function getInfo() {
 
       if (pros > 45) {
         //help from https://roytuts.com/html-table-conditional-cell-color/
-        info.rows[r].style.backgroundColor = "#abffbd";
+        tr.style.background = "#abffbd";
       } else if (pros < 25) {
-        info.rows[r].style.backgroundColor = "#ff9e9e";
+        //console.log(pros);
+        tr.style.backgroundColor = "#ff9e9e";
       }
-      td1.innerText = Object.values(data.dataset.dimension.Alue.category.label)[r];
+      td1.innerText = Object.values(data.dataset.dimension.Alue.category.label)[
+        r
+      ];
       td2.innerText = Object.values(data.dataset.value)[r];
       td3.innerText = Object.values(empData.dataset.value)[r];
       td4.innerText = pros.toFixed(2); //help from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tofixed
