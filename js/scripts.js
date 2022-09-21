@@ -1,6 +1,5 @@
 const info = document.getElementById("feched-data");
 getInfo();
-check();
 
 //Help from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
 //And discussion with Viia Mäntymäki
