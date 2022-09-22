@@ -2,6 +2,7 @@ const info = document.getElementById("feched-data");
 getInfo();
 
 //Help from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
+//leckture sourcecodes
 //And discussion with Viia Mäntymäki
 async function getInfo() {
   const url =
