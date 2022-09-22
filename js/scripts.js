@@ -2,8 +2,7 @@ const info = document.getElementById("feched-data");
 getInfo();
 
 //Help from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
-//leckture sourcecodes
-//And discussion with Viia Mäntymäki
+//lecture sourcedoes and discussion with Viia Mäntymäki
 async function getInfo() {
   const url =
     "https://statfin.stat.fi/PxWeb/sq/4e244893-7761-4c4f-8e55-7a8d41d86eff";
@@ -42,7 +41,7 @@ async function getInfo() {
       ];
       td2.innerText = Object.values(data.dataset.value)[r];
       td3.innerText = Object.values(empData.dataset.value)[r];
-      td4.innerText = pros.toFixed(2); //help from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tofixed
+      td4.innerText = pros.toFixed(2) + "%"; //help from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tofixed
 
       tr.appendChild(td1);
       tr.appendChild(td2);
