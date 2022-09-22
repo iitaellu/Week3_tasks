@@ -1,4 +1,4 @@
-const info = document.getElementById("feched-data");
+const info = document.getElementById("body");
 getInfo();
 
 //Help from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values
@@ -18,6 +18,7 @@ async function getInfo() {
     let size = Object.values(data.dataset.dimension.Alue.category.label).length;
 
     for (let r = 0; r < size; r++) {
+      //let tr = document.getElementById("body")
       let tr = document.createElement("tr");
       let td1 = document.createElement("td");
       let td2 = document.createElement("td");
